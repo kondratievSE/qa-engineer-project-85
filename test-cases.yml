@@ -1,12 +1,115 @@
 ---
 - summary: |  
-    Проверка классической регистрации
+    Проверка перехода с лендинга (стартовая страница) в форму регистрации 
   requirement: |
-    Пользователь должен иметь возможность зарегистрироваться используя,
+    Пользователь должен иметь возможность нажатием одной кнопки перейти к регистрации.
   prerequisites: |
-    Открыта Главная страница
+    Открыта стартовая страница https://codebattle.hexlet.io/
   test-data: none
   steps:
-    - Нажимаем на товар
+    - Нажимаем SIGN UP
   expected-result: |
-    Пользователь должен попасть на страницу выбранного товара
+    Пользователь должен попасть на страницу с формой регистрации
+
+- summary: |  
+    Проверка классической регистрации (позитивный кейс)
+  requirement: |
+    Пользователь должен иметь возможность зарегистрироваться используя, email, логин, пароль.
+  prerequisites: |
+    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: none
+  steps:
+      Заполнить поля формы с корректными данными:
+      - nickname
+      - уникальный email
+      - Password
+      - Password Confirmation
+      Нажать на кнопку "Submit".
+  expected-result: |
+    Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным никнеймом.
+
+- summary: |  
+    Проверка возможности повторной регистрации пользователя с одинаковым email
+  requirement: |
+    Система должна ограничивать возможность регистрации с email, зарегистрированного пользователя
+  prerequisites: |
+    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: none
+  steps:
+      Заполнить поля формы с корректными данными:
+      - nickname
+      - указываем email зарегистрированного пользователя   
+      - Password
+      - Password Confirmation
+      Нажать на кнопку "Submit".
+  expected-result: |
+    Регистрация не происходит. Появляется надпись об ошибке "Email is already taken"
+
+- summary: |  
+    Проверка возможности регистрации пользователя с пустым полем nickname
+  requirement: |
+    Система должна ограничивать возможность регистрации с пустым полем nickname
+  prerequisites: |
+    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: none
+  steps:
+      Заполнить поля формы с корректными данными:
+      - поле nickname оставить пустым
+      - уникальный email
+      - Password
+      - Password Confirmation
+      Нажать на кнопку "Submit".
+  expected-result: |
+    Регистрация не происходит. Появляется надпись об ошибке "Nickname required"
+
+- summary: |  
+    Проверка возможности регистрации пользователя с пустым полем email
+  requirement: |
+    Система должна ограничивать возможность регистрации с пустым полем email
+  prerequisites: |
+    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: none
+  steps:
+      Заполнить поля формы с корректными данными:
+      - nickname
+      - поле email оставить пустым
+      - Password
+      - Password Confirmation
+      Нажать на кнопку "Submit".
+  expected-result: |
+    Регистрация не происходит. Появляется надпись об ошибке "Email required"
+
+- summary: |  
+    Проверка возможности регистрации пользователя с кириллицей в nickname
+  requirement: |
+    Система должна ограничивать возможность регистрации с кириллицей в поле nickname
+  prerequisites: |
+    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: none
+  steps:
+      Заполнить поля формы с корректными данными:
+      - nickname (кириллицей)
+      - уникальный email
+      - Password
+      - Password Confirmation
+      Нажать на кнопку "Submit".
+  expected-result: |
+    Регистрация не происходит. Появляется надпись об ошибке "Should contain Latin letters only, also can contain numbers and underscores"
+
+- summary: |  
+    Проверка возможности регистрации пользователя через GIThub
+  requirement: |
+    Пользователь должен иметь возможность зарегистрироваться через Github
+  prerequisites: |
+    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: none
+  steps:
+      Нажать на кнопку "Sign In With Github"
+  expected-result: |
+    Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим никнеймом на Github.
+
+
+
+
+
+
