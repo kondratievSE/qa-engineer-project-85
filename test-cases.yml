@@ -97,28 +97,62 @@
     Регистрация не происходит. Появляется надпись об ошибке "Should contain Latin letters only, also can contain numbers and underscores"
 
 - summary: |  
-    Проверка возможности регистрации пользователя через GIThub
+    Проверка перенаправления на GIThub.com для регистрации (авторизации) пользователя на https://codebattle.hexlet.io/
   requirement: |
-    Пользователь должен иметь возможность зарегистрироваться через Github
+    Должно происходить перенаправление на старонний ресурс для регистрации (авторизации)
   prerequisites: |
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: none
   steps:
       Нажать на кнопку "Sign In With Github"
   expected-result: |
-    Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим никнеймом на Github.
+    Пользователь перенаправляется на страницу Github.com для авторизации на стороннем ресурсе
 
 - summary: |  
-    Проверка возможности регистрации пользователя через Discord
+    Проверка возможности регистрации (авторизации) пользователя через Github
   requirement: |
-    Пользователь должен иметь возможность зарегистрироваться через Discord
+    Пользователь должен иметь возможность зарегистрироваться (авторизоваться) через Github
+  prerequisites: |
+  Нажата кнопка "Sign In With Github"
+  Произошло перенаправление на страницу авторизации https://github.com/login..
+  test-data: none
+  steps:
+     Заполнить поля формы с корректными данными:
+      - номер телефона или email
+      - Password
+      Нажать на кнопку "ВХОД"
+  expected-result: |
+    Пользователь перенаправляется на страницу Github.com для авторизации на стороннем ресурсе
+    
+- summary: |  
+    Проверка перенаправления на GIThub.com для (авторизации) пользователя на https://codebattle.hexlet.io/
+  requirement: |
+    Пользователь должен иметь возможность зарегистрироваться (авторизоваться) через Discord
   prerequisites: |
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: none
   steps:
       Нажать на кнопку "Sign In With Discord"
   expected-result: |
-    Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим никнеймом на Discord.
+    Пользователь перенаправляется на страницу discord.com/login.. для авторизации на стороннем ресурсе
+
+- summary: |  
+    Проверка возможности регистрации пользователя через Discord
+  requirement: |
+    Пользователь должен иметь возможность зарегистрироваться (авторизоваться) через Discord
+  prerequisites: |
+    Нажата кнопка "Sign In With Discord"
+    Произошло перенаправление на страницу авторизации https://discord.com/login..
+  test-data: none
+  steps:
+      Заполнить поля формы с корректными данными:
+      - номер телефона или email
+      - Password
+      Нажать на кнопку "ВХОД".
+  expected-result: |
+    Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным в Discord никнеймом.
+    
+   
 
 
 
