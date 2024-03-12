@@ -108,6 +108,18 @@
   expected-result: |
     Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим никнеймом на Github.
 
+- summary: |  
+    Проверка возможности регистрации пользователя через Discord
+  requirement: |
+    Пользователь должен иметь возможность зарегистрироваться через Discord
+  prerequisites: |
+    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: none
+  steps:
+      Нажать на кнопку "Sign In With Discord"
+  expected-result: |
+    Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим никнеймом на Discord.
+
 
 
 
