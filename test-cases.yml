@@ -118,7 +118,7 @@
   test-data: none
   steps:
      Заполнить поля формы с корректными данными:
-      - номер телефона или email
+      - Username or email address
       - Password
       Нажать на кнопку "ВХОД"
   expected-result: |
