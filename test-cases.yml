@@ -14,7 +14,7 @@
 - summary: |  
     Проверка классической регистрации (позитивный кейс)
   requirement: |
-    Пользователь должен иметь возможность зарегистрироваться используя, email, логин, пароль.
+    Пользователь должен иметь возможность зарегистрироваться, используя email, логин, пароль.
   prerequisites: |
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: none
@@ -151,7 +151,96 @@
       Нажать на кнопку "ВХОД".
   expected-result: |
     Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным в Discord никнеймом.
+    
+- summary: |  
+    Проверка возможности отправки запроса на восстановление пароля
+  requirement: |
+    Пользователь должен иметь возможность отправить запрос на восстановление пароля
+  prerequisites: |
+    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+  test-data: none
+  steps:
+      Нажать на кнопку "Forgot your password?"
+      В форме восстановления ввести Email, указанный при регистрации 
+  expected-result: |
+      Пользователь видит сообщение, что пароль отправлен и получает на указанную почту указания для воссановления пароля
 
+- summary: |  
+    Проверка возможности восстановления пароля
+  requirement: |
+    Пользователь должен иметь возможность восстановления пароля
+  prerequisites: |
+    Пользователь запросил восстановление пароля и получил на указанный почтовый ящик письмо с ссылкой для восстановления
+  test-data: none
+  steps:
+      Нажать ссылку "Follow this link to reset your Codebattle password for your email@gmail.by account.", указанную в письме.
+      В форме "Reset your password" ввести новый пароль
+      Нажать кнопку SAVE
+  expected-result: |
+      Пользователь видит сообщение, что пароль изменен и он может войти с новым паролем (Password changed. You can now sign in with your new password)
+
+- summary: |  
+    Проверка возможности авторизации с восстановленным паролем
+  requirement: |
+    Пользователь должен авторизоваться после восстановления пароля
+  prerequisites: |
+    Пользователь востановил пароль, указав новый пароль
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2Fremind_password
+  test-data: none
+  steps:
+        Заполнить поля формы с корректными данными:
+      - email
+      - Password, указанный при восстановлении
+      Нажать на кнопку "Submit".
+  expected-result: |
+      Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным никнеймом.
+
+- summary: |  
+    Проверка возможности создания пробной игры
+  requirement: |
+    Пользователь должен иметь возможность создания пробной игры без авторизации
+  prerequisites: |
+    Пользователь не авторизован
+    Открыта стартовая страница https://codebattle.hexlet.io/
+  test-data: none
+  steps:
+    Нажать "Try simple battle"
+  expected-result: |
+    Пользователь перенаправляется на страницу c пробной игрой https://codebattle.hexlet.io/games/195073
+
+- summary: |  
+    Проверка возможности создания игры после авторизации
+  requirement: |
+    Пользователь должен иметь возможность создания игры после авторизации
+  prerequisites: |
+    Пользователь авторизован
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+  test-data: none
+  steps:
+    Нажать "Create a game"
+    Выбрать Level с одной звездой
+    Выбрать Game Type - with a bot
+    Выбрать Time control -10 минут
+    Выбрать Random task
+    Нажать Create battle
+  expected-result: |
+    Пользователь перенаправляется на страницу c новой игрой https://codebattle.hexlet.io/games/....
+
+      
+
+      - summary: |  
+    Проверка возможности создания турнира
+  requirement: |
+    Пользователь должен иметь возможность создания турнира
+  prerequisites: |
+    Пользователь авторизован
+    Открыта стартовая страница https://codebattle.hexlet.io/
+  test-data: none
+  steps:
+        Нажать "Try simple battle"
+  expected-result: |
+      Пользователь перенаправляется на страницу c пробной игрой https://codebattle.hexlet.io/games/195073
+      
     
     
    
