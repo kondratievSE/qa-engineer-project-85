@@ -337,16 +337,16 @@
   requirement: |
     Пользователь должен иметь возможность создания турнира
   prerequisites: |
-    Пользователь авторизован
+     Пользователь авторизован
      Открыта страница лобби https://codebattle.hexlet.io/#lobby
      Нажата вкладка TOURNAMENT
   test-data: none
   steps:
-        Нажать "You may want to create one"
+      Нажать "You may want to create one"
+      Вводим название турнира в поле name
+      Выбираем индивидуальный тип турнира (individual)
+      Указываем самое ранее время начала турнира
+      Нажимаем Create 
   expected-result: |
-      Пользователь перенаправляется на страницу c пробной игрой https://codebattle.hexlet.io/games/195073
+      Турнир успешно создан. Идет отсчет обратного времени до начала турнира.
       
-    
-    
-   
-
