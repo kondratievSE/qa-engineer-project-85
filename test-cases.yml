@@ -224,29 +224,129 @@
     Выбрать Random task
     Нажать Create battle
   expected-result: |
-    Пользователь перенаправляется на страницу c новой игрой https://codebattle.hexlet.io/games/....
+    Пользователь перенаправляется на страницу c новой игрой (https://codebattle.hexlet.io/games/....), начинается обратный отсчет таймера
 
-      
+- summary: |  
+    Тестирование проверки правильного решения в режиме игры с ботом
+  requirement: |
+    Система должна выполнять проверку решения без багов и ошибок 
+  prerequisites: |
+    Пользователь авторизован
+    Выбран Level с одной звездой
+    Создана игра с ботом rect_area
+    Выбран язык Node.js 16.17.0
+  test-data: 
+       const _ = require("lodash");
+       const R = require("rambda");
+       const solution = (width, length) => {
+         return width * length;
+       };
+       module.exports = solution;
+  steps:
+    В поле решения вводим тестовые данные
+    Нажимаем кнопку Run
+  expected-result: |
+    Пользователь видит всплывающее окно "Woohoo, you're Champion!!!!!" и "All test passed!!!" Проверка прошла успешна.
 
-      - summary: |  
+- summary: |  
+    Тестирование проверки правильного решения в режиме игры с ботом после окончания времени
+  requirement: |
+    Система должна выполнять проверку решения без багов и ошибок после окончания времени игры
+  prerequisites: |
+    Пользователь авторизован
+    Выбран Level с одной звездой
+    Создана игра с ботом rect_area
+    Выбран язык Node.js 16.17.0
+    Закончилось время, отведенное на игру
+  test-data: 
+       const _ = require("lodash");
+       const R = require("rambda");
+       const solution = (width, length) => {
+         return width * length;
+       };
+       module.exports = solution;
+  steps:
+    В поле решения вводим тестовые данные
+    Нажимаем кнопку Run
+  expected-result: |
+    Пользователь видит, что тесты прошли успешно ("All test passed!!!")
+
+- summary: |  
+    Тестирование вкладки проверки решения Output
+  requirement: |
+    Пользователь должен иметь возможность просмотреть проверку решения
+  prerequisites: |
+    Пользователь авторизован
+    Выбран Level с одной звездой
+    Создана игра с ботом rect_area
+    Выбран язык Node.js 16.17.0
+  test-data: 
+       const _ = require("lodash");
+       const R = require("rambda");
+       const solution = (width, length) => {
+         return width * length;
+       };
+       module.exports = solution;
+  steps:
+    В поле решения вводим тестовые данные
+    Открываем кладку Output
+    Нажимаем кнопку Run
+  expected-result: |
+    Пользователь видит в реальном времени прохождение тестов с различными параметрами
+
+- summary: |  
+    Тестирование возможности досрочно закончить игру
+  requirement: |
+    Пользователь должен иметь возможность досрочно закончить игру (сдаться, проиграть)
+  prerequisites: |
+    Пользователь авторизован
+    Выбран Level с двумя звездами
+    Создана игра с ботом triangle_area
+    Выбран язык Elixir 1.15.0
+  test-data: none
+  steps:
+    Нажимаем кнопку Give up
+    Во всплывающем окне подтверждаем Give up
+  expected-result: |
+    Пользователь видит сообщение о прекращении игры и проигрыше (If you read this you've lost the game)
+
+- summary: |  
+       Тестирование возможности вернуть поле ввода решения в исходное состояние во время игры 
+   requirement: |
+       Пользователь должен иметь возможность очистить поле ввода решения одним нажатием, если хочет начать сначала решение
+   prerequisites: |
+    Пользователь авторизован
+    Выбран Level с тремя звездами
+    Создана игра с ботом random_task
+    Выбран язык Node.js 16.17.0
+  test-data: 
+        const _ = require("lodash");
+       const R = require("rambda");
+       const solution = (width, length) => {
+         return width * length;
+       };
+       module.exports = solution;
+  steps:
+     В поле решения вводим тестовые данные
+     Нажимаем кнопку Reset editor
+  expected-result: |
+    Пользователь видит, что поле ввода решения вернулось в исходное состояние
+
+- summary: |  
     Проверка возможности создания турнира
   requirement: |
     Пользователь должен иметь возможность создания турнира
   prerequisites: |
     Пользователь авторизован
-    Открыта стартовая страница https://codebattle.hexlet.io/
+     Открыта страница лобби https://codebattle.hexlet.io/#lobby
+     Нажата вкладка TOURNAMENT
   test-data: none
   steps:
-        Нажать "Try simple battle"
+        Нажать "You may want to create one"
   expected-result: |
       Пользователь перенаправляется на страницу c пробной игрой https://codebattle.hexlet.io/games/195073
       
     
     
    
-
-
-
-
-
 
