@@ -1,479 +1,119 @@
----
 - summary: |  
-    Проверка перехода с лендинга (стартовая страница) в форму регистрации 
-  requirement: |
-    Пользователь должен иметь возможность нажатием одной кнопки перейти к регистрации.
-  prerequisites: |
-    Открыта стартовая страница https://codebattle.hexlet.io/
-  test-data: none
-  steps:
-    - Нажимать SIGN UP
-  expected-result: |
-    Пользователь должен попасть на страницу с формой регистрации
+     Проверка перехода с лендинга (стартовая страница) в форму регистрации 
+   status: pass
 
 - summary: |  
     Проверка классической регистрации (позитивный кейс)
-  requirement: |
-    Пользователь должен иметь возможность зарегистрироваться, используя email, логин, пароль.
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-      Заполнить поля формы латиницей с корректными данными:
-      - nickname
-      - уникальный email
-      - Password
-      - Password Confirmation
-      Нажать на кнопку "Submit".
-  expected-result: |
-    Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным никнеймом.
-
+  status: pass
+  
 - summary: |  
     Проверка возможности повторной регистрации пользователя с одинаковым email
-  requirement: |
-    Система должна ограничивать возможность регистрации с email, зарегистрированного пользователя
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-      Заполнить поля формы с корректными данными:
-      - nickname
-      - указать email уже зарегистрированного пользователя   
-      - Password
-      - Password Confirmation
-      Нажать на кнопку "Submit".
-  expected-result: |
-    Регистрация не происходит. Появляется надпись об ошибке "Email is already taken"
+  status: pass
 
 - summary: |  
     Проверка возможности регистрации пользователя с пустым полем nickname
-  requirement: |
-    Система должна ограничивать возможность регистрации с пустым полем nickname
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-      Заполнить поля формы с корректными данными:
-      - поле nickname оставить пустым
-      - уникальный email
-      - Password
-      - Password Confirmation
-      Нажать на кнопку "Submit".
-  expected-result: |
-    Регистрация не происходит. Появляется надпись об ошибке "Nickname required"
+  status: pass
 
 - summary: |  
     Проверка возможности регистрации пользователя с пустым полем email
-  requirement: |
-    Система должна ограничивать возможность регистрации с пустым полем email
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-      Заполнить поля формы с корректными данными:
-      - nickname
-      - поле email оставить пустым
-      - Password
-      - Password Confirmation
-      Нажать на кнопку "Submit".
-  expected-result: |
-    Регистрация не происходит. Появляется надпись об ошибке "Email required"
+  status: pass
 
 - summary: |  
     Проверка возможности регистрации пользователя с кириллицей в поле nickname
-  requirement: |
-    Система должна ограничивать возможность регистрации с кириллицей в поле nickname
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-      Заполнить поля формы с корректными данными:
-      - nickname (кириллицей)
-      - уникальный email
-      - Password
-      - Password Confirmation
-      Нажать на кнопку "Submit".
-  expected-result: |
-    Регистрация не происходит. Появляется надпись об ошибке "Should contain Latin letters only, also can contain numbers and underscores"
+  status: pass
 
 - summary: |  
     Проверка перенаправления на GIThub.com для регистрации (авторизации) пользователя на https://codebattle.hexlet.io/
-  requirement: |
-    Должно происходить перенаправление на старонний ресурс для регистрации (авторизации)
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-    Нажать на кнопку "Sign In With Github"
-  expected-result: |
-    Пользователь перенаправляется на страницу Github.com для авторизации на стороннем ресурсе
-
+  status: pass
+  
 - summary: |  
     Проверка возможности регистрации (авторизации) пользователя через Github
-  requirement: |
-    Пользователь должен иметь возможность зарегистрироваться (авторизоваться) через Github
-  prerequisites: |
-  Нажата кнопка "Sign In With Github"
-  Произошло перенаправление на страницу авторизации https://github.com/login..
-  test-data: none
-  steps:
-     Заполнить поля формы с корректными данными зарегистрированного пользователя:
-      - Username or email address
-      - Password
-     Нажать на кнопку "Sign In"
-  expected-result: |
-    Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным в Github никнеймом.
+  status: pass
     
 - summary: |  
     Проверка перенаправления на Discord для (авторизации) пользователя на https://codebattle.hexlet.io/
-  requirement: |
-    Должно происходить перенаправление на старонний ресурс для регистрации (авторизации)
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-      Нажать на кнопку "Sign In With Discord"
-  expected-result: |
-    Пользователь перенаправляется на страницу discord.com/login.. для авторизации на стороннем ресурсе
+  status: pass
 
 - summary: |  
     Проверка возможности регистрации пользователя через Discord
-  requirement: |
-    Пользователь должен иметь возможность зарегистрироваться (авторизоваться) через Discord
-  prerequisites: |
-    Нажата кнопка "Sign In With Discord"
-    Произошло перенаправление на страницу авторизации https://discord.com/login..
-  test-data: none
-  steps:
-      Заполнить поля формы с корректными данными зарегистрированного пользователя:
-      - номер телефона или email
-      - Password
-      Нажать на кнопку "ВХОД".
-  expected-result: |
-    Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным в Discord никнеймом.
+  status: pass
     
 - summary: |  
     Проверка возможности отправки запроса на восстановление пароля
-  requirement: |
-    Пользователь должен иметь возможность отправить запрос на восстановление пароля
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-      Нажать на кнопку "Forgot your password?"
-      В форме восстановления ввести Email, указанный при регистрации 
-  expected-result: |
-      Пользователь видит сообщение, что пароль отправлен и получает на указанную почту ссылку для воссановления пароля
+  status: pass
 
 - summary: |  
     Проверка возможности восстановления пароля
-  requirement: |
-    Пользователь должен иметь возможность восстановления пароля
-  prerequisites: |
-    Пользователь запросил восстановление пароля и получил на указанный почтовый ящик письмо с ссылкой для восстановления
-  test-data: none
-  steps:
-      Нажать ссылку "Follow this link to reset your Codebattle password for your email@gmail.by account.", указанную в письме.
-      В форме "Reset your password" ввести новый пароль
-      Нажать кнопку SAVE
-  expected-result: |
-      Пользователь видит сообщение, что пароль изменен и он может войти с новым паролем (Password changed. You can now sign in with your new password)
+    status: pass
 
 - summary: |  
     Проверка возможности авторизации с восстановленным паролем
-  requirement: |
-    Пользователь должен авторизоваться после восстановления пароля
-  prerequisites: |
-    Пользователь востановил пароль, указав новый пароль
-    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2Fremind_password
-  test-data: none
-  steps:
-        Заполнить поля формы с корректными данными:
-      - email
-      - Password, указанный при восстановлении
-      Нажать на кнопку "Submit".
-  expected-result: |
-      Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным никнеймом.
+  status: pass
 
 - summary: |  
     Проверка возможности создания пробной игры
-  requirement: |
-    Пользователь должен иметь возможность создания пробной игры без авторизации
-  prerequisites: |
-    Пользователь не авторизован
-    Открыта стартовая страница https://codebattle.hexlet.io/
-  test-data: none
-  steps:
-    Нажать "Try simple battle"
-  expected-result: |
-    Пользователь перенаправляется на страницу c пробной игрой https://codebattle.hexlet.io/games/195073
+  status: pass
 
 - summary: |  
     Проверка возможности создания игры после авторизации
-  requirement: |
-    Пользователь должен иметь возможность создания игры после авторизации
-  prerequisites: |
-    Пользователь авторизован
-    Открыта страница лобби https://codebattle.hexlet.io/#lobby
-  test-data: none
-  steps:
-    Нажать "Create a game"
-    Выбрать Level с одной звездой
-    Выбрать Game Type - with a bot
-    Выбрать Time control -10 минут
-    Выбрать Random task
-    Нажать Create battle
-  expected-result: |
-    Пользователь перенаправляется на страницу c новой игрой (https://codebattle.hexlet.io/games/....), начинается обратный отсчет таймера
+  status: pass
 
 - summary: |  
     Проверка наличия обратного отсчета времени игры
-  requirement: |
-    Пользователь должен иметь возможность видеть оставшееся время для решения задачи 
-  prerequisites: |
-    Пользователь авторизован
-    Начата новая игра с ботом в любом формате
-  test-data: none
-  steps: none
-  expected-result: |
-    Пользователь на странице c новой игрой видит обратный отсчет времени
-
+  status: pass
+  
 - summary: |  
     Тестирование проверки правильного решения в режиме игры с ботом
-  requirement: |
-    Система должна выполнять проверку решения без багов и ошибок 
-  prerequisites: |
-    Пользователь авторизован
-    Выбран Level с одной звездой
-    Создана игра с ботом rect_area
-    Выбран язык Node.js 16.17.0
-  test-data: 
-       const _ = require("lodash");
-       const R = require("rambda");
-       const solution = (width, length) => {
-         return width * length;
-       };
-       module.exports = solution;
-  steps:
-    В поле решения ввести тестовые данные
-    Нажимать кнопку Run
-  expected-result: |
-    Пользователь видит всплывающее окно "Woohoo, you're Champion!!!!!" и "All test passed!!!" Проверка прошла успешна.
+  status: pass
 
 - summary: |  
     Тестирование проверки правильного решения в режиме игры с ботом после окончания времени
-  requirement: |
-    Система должна выполнять проверку решения без багов и ошибок после окончания времени игры
-  prerequisites: |
-    Пользователь авторизован
-    Выбран Level с одной звездой
-    Создана игра с ботом rect_area
-    Выбран язык Node.js 16.17.0
-    Закончилось время, отведенное на игру
-  test-data: 
-       const _ = require("lodash");
-       const R = require("rambda");
-       const solution = (width, length) => {
-         return width * length;
-       };
-       module.exports = solution;
-  steps:
-    В поле решения ввести тестовые данные
-    Нажимать кнопку Run
-  expected-result: |
-    Пользователь видит, что тесты прошли успешно ("All test passed!!!")
+  status: pass
 
 - summary: |  
     Тестирование вкладки проверки решения Output
-  requirement: |
-    Пользователь должен иметь возможность просмотреть проверку решения
-  prerequisites: |
-    Пользователь авторизован
-    Выбран Level с одной звездой
-    Создана игра с ботом rect_area
-    Выбран язык Node.js 16.17.0
-  test-data: 
-       const _ = require("lodash");
-       const R = require("rambda");
-       const solution = (width, length) => {
-         return width * length;
-       };
-       module.exports = solution;
-  steps:
-    В поле решения вводим тестовые данные
-    Открываем кладку Output
-    Нажимаем кнопку Run
-  expected-result: |
-    Пользователь видит в реальном времени прохождение тестов с различными параметрами
+  status: pass
 
 - summary: |  
     Тестирование возможности досрочно закончить игру
-  requirement: |
-    Пользователь должен иметь возможность досрочно закончить игру (сдаться, проиграть)
-  prerequisites: |
-    Пользователь авторизован
-    Выбран Level с двумя звездами
-    Создана игра с ботом triangle_area
-    Выбран язык Elixir 1.15.0
-  test-data: none
-  steps:
-    Нажимать кнопку Give up
-    Во всплывающем окне подтвердить Give up
-  expected-result: |
-    Пользователь видит сообщение о прекращении игры и проигрыше (If you read this you've lost the game)
+  status: pass
 
 - summary: |  
        Тестирование возможности сбросить поле ввода решения в исходное состояние во время игры 
-   requirement: |
-       Пользователь должен иметь возможность очистить поле ввода решения одним нажатием, если хочет начать сначала решение
-   prerequisites: |
-    Пользователь авторизован
-    Выбран Level с тремя звездами
-    Создана игра с ботом random_task
-    Выбран язык Node.js 16.17.0
-  test-data: 
-        const _ = require("lodash");
-        const R = require("rambda");
-        const solution = (width, length) => {
-         return width * length;
-       };
-       module.exports = solution;
-  steps:
-     В поле решения ввести тестовые данные
-     Нажать кнопку Reset editor
-  expected-result: |
-    Пользователь видит, что поле ввода решения вернулось в исходное состояние
+   status: pass
 
 - summary: |  
     Проверка возможности создания турнира
-  requirement: |
-    Пользователь должен иметь возможность создания турнира
-  prerequisites: |
-     Пользователь авторизован
-     Открыта страница лобби https://codebattle.hexlet.io/#lobby
-     Нажата вкладка TOURNAMENT
-  test-data: none
-  steps:
-      Нажать "You may want to create one"
-      Ввести название турнира в поле name
-      Выбрать индивидуальный тип турнира (individual)
-      Указать самое ранее время начала турнира
-      Нажать Create
-  expected-result: |
-      Турнир успешно создан. Идет отсчет обратного времени до начала турнира.
+  status: pass
 
 - summary: |  
     Проверка возможности учавствовать в существующем турнире
-  requirement: |
-    Пользователь должен иметь возможность присоединиться к существующему турниру
-  prerequisites: |
-     Пользователь авторизован
-     Нажата вкладка TOURNAMENT
-     В разделе Live tournaments выбран активный турнир (кнопка Show)
-  test-data: none
-  steps:
-      Нажать "+JOIN"
-  expected-result: |
-      Пользователь добавлен в раздел участников турнира
-
+  status: pass
+  
 - summary: |  
     Проверка возможности отправлять сообщения в общий чат
-  requirement: |
-    Пользователь должен иметь воозможность писать в общий чат
-  prerequisites: |
-     Пользователь авторизован
-     Открыта страница лобби https://codebattle.hexlet.io/#lobby
-     Открыта вкладка чата "General"
-  test-data: "It's Hexlet, baby!"
-  steps:
-     Ввести в поле чата тестовые данные   
-     Нажать кнопку "Send"
-  expected-result: |
-     Отправленное сообщение отображается в чате
+  status: pass
 
 - summary: |  
     Проверка возможности создания личного чата с другим игроком
-  requirement: |
-    Пользователь должен иметь возможность создания личного чата с другим игроком
-  prerequisites: |
-     Пользователь авторизован
-     Открыта страница лобби https://codebattle.hexlet.io/#lobby
-     Есть игроки в статусе "Online"
-  test-data: none
-  steps:
-      Навести курсор на игрока в статусе "Online"
-      Нажать ПКМ на никнейме игрока
-      Выбрать пункт "Direct message"
-  expected-result: |
-      Пользователь переходит в отдельно созданный чат с никнеймом игрока
+  status: pass
 
 - summary: |  
     Проверка возможности просмотра общего рейтинга игроков в виде таблицы
-  requirement: |
-    Пользователь должен иметь возможность просматривать таблицу с рейтингами игроков
-  prerequisites: |
-     Пользователь авторизован
-     Открыта страница лобби https://codebattle.hexlet.io/#lobby
-  test-data: none
-  steps:
-      Нажать ЛКМ на своем никнейме в верхнем углу
-      Выбрать пункт меню "Users rating"
-  expected-result: |
-      Пользователь переходит на страницу с таблицей рейтингов игроков
+  status: pass
 
 - summary: |  
     Проверка возможности пагинации таблицы рейтинга игроков
-  requirement: |
-    Пользователь должен иметь возможность просмотра всей таблицы рейтинга
-  prerequisites: |
-     Пользователь авторизован
-     Открыта страница рейтинга игроков https://codebattle.hexlet.io/users
-  test-data: none
-  steps:
-      Нажать ЛКМ на второй номер страницы внизу списка
-  expected-result: |
-      Пользователь видит вторую страницу рейтинга игроков
+  status: pass
 
 - summary: |  
     Проверка возможности сортировки таблицы рейтинга игроков
-  requirement: |
-    Пользователь должен иметь возможность сортировки всей таблицы рейтинга
-  prerequisites: |
-     Пользователь авторизован
-     Открыта страница рейтинга игроков https://codebattle.hexlet.io/users
-     Выбран общий рейтинг Total
-  test-data: none
-  steps:
-      Нажать ЛКМ на "Rating"
-  expected-result: |
-      Пользователь видит сортировку игроков по рейтингу
+  status: pass
 
 - summary: |  
     Проверка возможности сортировки таблицы рейтинга игроков за текущий месяц
-  requirement: |
-    Пользователь должен иметь возможность сортировки всей таблицы рейтинга за текущий месяц
-  prerequisites: |
-     Пользователь авторизован
-     Открыта страница рейтинга игроков https://codebattle.hexlet.io/users
-     Выбран рейтинг за месяц Monthly
-  test-data: none
-  steps:
-      Нажать ЛКМ на "Rating"
-  expected-result: |
-      Пользователь видит сортировку игроков по рейтингу за текущий месяц
+  status: fail
 
 - summary: |  
     Проверка появления всплывающего окна при наведении на "Online players" с краткой информацией (рейтинге) о игроке
-  requirement: |
-    Пользователь должен иметь возможность быстро просмотреть рейтинг игрока для выбора соперника
-  prerequisites: |
-     Пользователь авторизован
-     Открыта страница лобби https://codebattle.hexlet.io/#lobby
-     В списке "Online players" есть другой игрок
-     Открыт Devtools на вкладке Network
-  test-data: none
-  steps:
-      Наводим курсор на никнейм игрока в статусе "Online players"
-  expected-result: |
-      Клиент отправляет GET запрос о данных игрока.
-
+  status: fail
