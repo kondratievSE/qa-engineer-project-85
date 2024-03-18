@@ -19,12 +19,12 @@
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: none
   steps:
-      Заполнить поля формы латиницей с корректными данными:
+      1. Заполнить поля формы латиницей с корректными данными
       - nickname
       - уникальный email
       - Password
       - Password Confirmation
-      Нажать на кнопку "Submit"
+     2. Нажать на кнопку "Submit"
   expected-result: |
     Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным никнеймом
 
