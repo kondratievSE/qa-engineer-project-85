@@ -20,10 +20,10 @@
   test-data: none
   steps:
       Заполнить поля формы латиницей с корректными данными
-      nickname
-      уникальный email
-      Password
-      Password Confirmation.
+       nickname
+       уникальный email
+       Password
+       Password Confirmation.
       Нажать на кнопку "Submit"
   expected-result: |
     Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным никнеймом.
