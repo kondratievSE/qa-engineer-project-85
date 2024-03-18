@@ -53,7 +53,7 @@
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: none
   steps:
-      Заполнить поля формы с корректными данными:
+      Заполнить поля формы с корректными данными
       - поле nickname оставить пустым
       - уникальный email
       - Password
@@ -70,7 +70,7 @@
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: none
   steps:
-      Заполнить поля формы с корректными данными:
+      Заполнить поля формы с корректными данными
       - nickname
       - поле email оставить пустым
       - Password
@@ -87,7 +87,7 @@
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: none
   steps:
-      Заполнить поля формы с корректными данными:
+      Заполнить поля формы с корректными данными
       - nickname (кириллицей)
       - уникальный email
       - Password
@@ -117,7 +117,7 @@
   Произошло перенаправление на страницу авторизации https://github.com/login..
   test-data: none
   steps:
-     Заполнить поля формы с корректными данными зарегистрированного пользователя:
+     Заполнить поля формы с корректными данными зарегистрированного пользователя
       - Username or email address
       - Password
      Нажать на кнопку "Sign In"
@@ -145,7 +145,7 @@
     Произошло перенаправление на страницу авторизации https://discord.com/login..
   test-data: none
   steps:
-      Заполнить поля формы с корректными данными зарегистрированного пользователя:
+      Заполнить поля формы с корректными данными зарегистрированного пользователя
       - номер телефона или email
       - Password
       Нажать на кнопку "ВХОД".
@@ -173,7 +173,7 @@
     Пользователь запросил восстановление пароля и получил на указанный почтовый ящик письмо с ссылкой для восстановления
   test-data: none
   steps:
-      Нажать ссылку "Follow this link to reset your Codebattle password for your email@gmail.by account.", указанную в письме.
+      Нажать ссылку "Follow this link to reset your Codebattle password for your email@gmail.by account.", указанную в письме
       В форме "Reset your password" ввести новый пароль
       Нажать кнопку SAVE
   expected-result: |
