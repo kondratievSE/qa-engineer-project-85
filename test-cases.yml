@@ -188,10 +188,10 @@
     Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2Fremind_password
   test-data: none
   steps:
-        Заполнить поля формы с корректными данными:
-      - email
-      - Password, указанный при восстановлении
-      Нажать на кнопку "Submit".
+    Заполнить поля формы с корректными данными
+    - email
+    - Password, указанный при восстановлении
+    Нажать на кнопку "Submit".
   expected-result: |
       Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным никнеймом.
 
