@@ -36,7 +36,7 @@
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: none
   steps:
-      Заполнить поля формы с корректными данными:
+      Заполнить поля формы с корректными данными
       - nickname
       - указать email уже зарегистрированного пользователя   
       - Password
