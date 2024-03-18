@@ -1,119 +1,119 @@
 - summary: |  
      Проверка перехода с лендинга (стартовая страница) в форму регистрации 
-   status: pass
+status: pass
 
 - summary: |  
     Проверка классической регистрации (позитивный кейс)
-  status: pass
+status: pass
   
 - summary: |  
     Проверка возможности повторной регистрации пользователя с одинаковым email
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности регистрации пользователя с пустым полем nickname
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности регистрации пользователя с пустым полем email
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности регистрации пользователя с кириллицей в поле nickname
-  status: pass
+status: pass
 
 - summary: |  
     Проверка перенаправления на GIThub.com для регистрации (авторизации) пользователя на https://codebattle.hexlet.io/
-  status: pass
+status: pass
   
 - summary: |  
     Проверка возможности регистрации (авторизации) пользователя через Github
-  status: pass
+status: pass
     
 - summary: |  
     Проверка перенаправления на Discord для (авторизации) пользователя на https://codebattle.hexlet.io/
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности регистрации пользователя через Discord
-  status: pass
+status: pass
     
 - summary: |  
     Проверка возможности отправки запроса на восстановление пароля
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности восстановления пароля
-    status: pass
+status: pass
 
 - summary: |  
     Проверка возможности авторизации с восстановленным паролем
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности создания пробной игры
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности создания игры после авторизации
-  status: pass
+status: pass
 
 - summary: |  
     Проверка наличия обратного отсчета времени игры
-  status: pass
+status: pass
   
 - summary: |  
     Тестирование проверки правильного решения в режиме игры с ботом
-  status: pass
+status: pass
 
 - summary: |  
     Тестирование проверки правильного решения в режиме игры с ботом после окончания времени
-  status: pass
+status: pass
 
 - summary: |  
     Тестирование вкладки проверки решения Output
-  status: pass
+status: pass
 
 - summary: |  
     Тестирование возможности досрочно закончить игру
-  status: pass
+status: pass
 
 - summary: |  
        Тестирование возможности сбросить поле ввода решения в исходное состояние во время игры 
-   status: pass
+status: pass
 
 - summary: |  
     Проверка возможности создания турнира
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности учавствовать в существующем турнире
-  status: pass
+status: pass
   
 - summary: |  
     Проверка возможности отправлять сообщения в общий чат
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности создания личного чата с другим игроком
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности просмотра общего рейтинга игроков в виде таблицы
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности пагинации таблицы рейтинга игроков
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности сортировки таблицы рейтинга игроков
-  status: pass
+status: pass
 
 - summary: |  
     Проверка возможности сортировки таблицы рейтинга игроков за текущий месяц
-  status: fail
+status: fail
 
 - summary: |  
     Проверка появления всплывающего окна при наведении на "Online players" с краткой информацией (рейтинге) о игроке
-  status: fail
+status: fail
