@@ -36,12 +36,12 @@
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: none
   steps:
-    1. Заполнить поля формы с корректными данными:
+     1. Заполнить поля формы с корректными данными:
       - nickname
       - указать email уже зарегистрированного пользователя   
       - Password
       - Password Confirmation
-    2. Нажать на кнопку "Submit"
+     2. Нажать на кнопку "Submit"
   expected-result: |
     Регистрация не происходит. Появляется надпись об ошибке "Email is already taken"
 
