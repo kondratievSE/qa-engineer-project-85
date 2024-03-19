@@ -187,7 +187,7 @@
     Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2Fremind_password
   test-data: none
   steps:
-    - Заполнить поля формы с корректными данными: email, Password, указанный при восстановлении
+    - Заполнить поля формы с корректными данными (email, Password, указанный при восстановлении)
     - Нажать на кнопку "Submit"
   expected-result: |
       Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным никнеймом.
@@ -229,9 +229,15 @@
     Пользователь должен иметь возможность видеть оставшееся время для решения задачи 
   prerequisites: |
     Пользователь авторизован
-    Начата новая игра с ботом в любом формате
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
   test-data: none
-  steps: none
+  steps: 
+    - Нажать "Create a game"
+    - Выбрать Level с четырьмя звездами
+    - Выбрать Game Type - with a bot
+    - Выбрать Time control -10 минут
+    - Выбрать Random task
+    - Нажать Create battle
   expected-result: |
     Пользователь на странице c новой игрой видит обратный отсчет времени
 
