@@ -21,7 +21,6 @@
     nickname
     уникальный email
     Password
-    Password Confirmation
   steps:
     - Заполнить поля формы латиницей с корректными данными
     - Нажать на кнопку "Submit"
