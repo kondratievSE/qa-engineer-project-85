@@ -18,7 +18,11 @@
   prerequisites: |
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: 
-    [nickname, уникальный email, Password, Password Confirmation]
+    nickname
+    уникальный email
+    Password
+    Password 
+    Confirmation
   steps:
     - Заполнить поля формы латиницей с корректными данными
     - Нажать на кнопку "Submit"
