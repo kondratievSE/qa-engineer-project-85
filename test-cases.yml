@@ -33,14 +33,14 @@
     Система должна ограничивать возможность регистрации с email, зарегистрированного пользователя
   prerequisites: |
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
+  test-data: 
+      nickname
+      указать email уже зарегистрированного пользователя   
+      Password
+      Password Confirmation
   steps:
-      Заполнить поля формы с корректными данными
-      - nickname
-      - указать email уже зарегистрированного пользователя   
-      - Password
-      - Password Confirmation
-      Нажать на кнопку "Submit".
+      - Заполнить поля формы с корректными данными
+      - Нажать на кнопку "Submit"
   expected-result: |
     Регистрация не происходит. Появляется надпись об ошибке "Email is already taken"
 
@@ -50,14 +50,14 @@
     Система должна ограничивать возможность регистрации с пустым полем nickname
   prerequisites: |
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
+  test-data: 
+    поле nickname оставить пустым
+    уникальный email
+    Password
+     Password Confirmation
   steps:
-      Заполнить поля формы с корректными данными
-      - поле nickname оставить пустым
-      - уникальный email
-      - Password
-      - Password Confirmation
-      Нажать на кнопку "Submit".
+    - Заполнить поля формы с корректными данными
+    - Нажать на кнопку "Submit"
   expected-result: |
     Регистрация не происходит. Появляется надпись об ошибке "Nickname required"
 
@@ -67,14 +67,14 @@
     Система должна ограничивать возможность регистрации с пустым полем email
   prerequisites: |
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
+  test-data:
+    nickname
+    поле email оставить пустым
+    Password
+    Password Confirmation
   steps:
-      Заполнить поля формы с корректными данными
-      - nickname
-      - поле email оставить пустым
-      - Password
-      - Password Confirmation
-      Нажать на кнопку "Submit".
+    - Заполнить поля формы с корректными данными
+    - Нажать на кнопку "Submit"
   expected-result: |
     Регистрация не происходит. Появляется надпись об ошибке "Email required"
 
@@ -84,14 +84,14 @@
     Система должна ограничивать возможность регистрации с кириллицей в поле nickname
   prerequisites: |
     Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
+  test-data: 
+    nickname (кириллицей)
+    уникальный email
+    Password
+    Password Confirmation
   steps:
-      Заполнить поля формы с корректными данными
-      - nickname (кириллицей)
-      - уникальный email
-      - Password
-      - Password Confirmation
-      Нажать на кнопку "Submit".
+    - Заполнить поля формы с корректными данными
+    - Нажать на кнопку "Submit".
   expected-result: |
     Регистрация не происходит. Появляется надпись об ошибке "Should contain Latin letters only, also can contain numbers and underscores"
 
