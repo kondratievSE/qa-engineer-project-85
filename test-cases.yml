@@ -1,18 +1,6 @@
 ---
 - summary: |  
-    Проверка перехода с лендинга (стартовая страница) в форму регистрации 
-  requirement: |
-    Пользователь должен иметь возможность нажатием одной кнопки перейти к регистрации.
-  prerequisites: |
-    Открыта стартовая страница https://codebattle.hexlet.io/
-  test-data: none
-  steps:
-    - Нажимать SIGN UP
-  expected-result: |
-    Пользователь должен попасть на страницу с формой регистрации
-
-- summary: |  
-    Проверка классической регистрации (позитивный кейс)
+    Проверка регистрации по email (позитивный кейс)
   requirement: |
     Пользователь должен иметь возможность зарегистрироваться, используя email, логин, пароль.
   prerequisites: |
@@ -97,51 +85,29 @@
     Регистрация не происходит. Появляется надпись об ошибке "Should contain Latin letters only, also can contain numbers and underscores"
 
 - summary: |  
-    Проверка перенаправления на GIThub.com для регистрации (авторизации) пользователя на https://codebattle.hexlet.io/
-  requirement: |
-    Должно происходить перенаправление на старонний ресурс для регистрации (авторизации)
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-    - Нажать на кнопку "Sign In With Github"
-  expected-result: |
-    Пользователь перенаправляется на страницу Github.com для авторизации на стороннем ресурсе
-
-- summary: |  
     Проверка возможности регистрации (авторизации) пользователя через Github
   requirement: |
     Пользователь должен иметь возможность зарегистрироваться (авторизоваться) через Github
   prerequisites: |
-    Нажата кнопка "Sign In With Github"
+    Пользователь имеет зарегистрированный аккаунт в Github
+    Выбрана авторизация через "Sign In With Github"
     Произошло перенаправление на страницу авторизации https://github.com/login..
   test-data:
-    Username or email address
+    Username or email address on Github
     Password
   steps:
     - Заполнить поля формы с корректными данными зарегистрированного пользователя
     - Нажать на кнопку "Sign In"
   expected-result: |
     Пользователь перенаправляется на страницу лобби https://codebattle.hexlet.io/#lobby под своим зарегистрированным в Github никнеймом.
-    
-- summary: |  
-    Проверка перенаправления на Discord для (авторизации) пользователя на https://codebattle.hexlet.io/
-  requirement: |
-    Должно происходить перенаправление на старонний ресурс для регистрации (авторизации)
-  prerequisites: |
-    Открыта страница с формой регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-  test-data: none
-  steps:
-    - Нажать на кнопку "Sign In With Discord"
-  expected-result: |
-    Пользователь перенаправляется на страницу discord.com/login.. для авторизации на стороннем ресурсе
 
 - summary: |  
     Проверка возможности регистрации пользователя через Discord
   requirement: |
     Пользователь должен иметь возможность зарегистрироваться (авторизоваться) через Discord
   prerequisites: |
-    Нажата кнопка "Sign In With Discord"
+    Пользователь имеет зарегистрированный аккаунт в Discord 
+     Выбрана авторизация через "Sign In With Discord"
     Произошло перенаправление на страницу авторизации https://discord.com/login..
   test-data: 
     номер телефона или email
@@ -223,24 +189,6 @@
     - Нажать Create battle
   expected-result: |
     Пользователь перенаправляется на страницу c новой игрой (https://codebattle.hexlet.io/games/....), начинается обратный отсчет таймера
-
-- summary: |  
-    Проверка наличия обратного отсчета времени игры
-  requirement: |
-    Пользователь должен иметь возможность видеть оставшееся время для решения задачи 
-  prerequisites: |
-    Пользователь авторизован
-    Открыта страница лобби https://codebattle.hexlet.io/#lobby
-  test-data: none
-  steps: 
-    - Нажать "Create a game"
-    - Выбрать Level с четырьмя звездами
-    - Выбрать Game Type - with a bot
-    - Выбрать Time control -10 минут
-    - Выбрать Random task
-    - Нажать Create battle
-  expected-result: |
-    Пользователь на странице c новой игрой видит обратный отсчет времени
 
 - summary: |  
     Тестирование проверки правильного решения в режиме игры с ботом
